@@ -1,0 +1,1064 @@
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(20%, 0.6fr)); /* Две колонки одинаковой ширины */
+    gap: 0.5rem; /* Отступы между элементами */
+	margin: 0 auto;
+	max-width: 76%;
+}
+
+body {
+    overflow-x: hidden;
+	background-color: black;
+	justify-content: center;
+    align-items: center;
+}
+
+.soldier img {
+    position: absolute;
+    top: 6%;
+    left: 47%;
+    width: 60vw;
+    height: auto;
+    z-index: -2;
+}
+
+.shadow {
+    position: absolute;
+    margin-top: 47%;
+    left: 20%;
+    width: 100vw;
+    height: 80vw;
+    flex-shrink: 0;
+    background: black;
+    filter: blur(36.5px);
+    z-index: -1;
+}
+
+.item {
+    padding: 2rem;
+	margin-bottom: 15px;
+}
+
+.about-karaganda-text-one img {
+	width: 98%;
+}
+
+.logo-logo img {
+	width: 45%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 1.5vw;
+	margin-top: 20px;
+}
+
+.logo-logo2 img {
+	width: 75%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 1.5vw;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.center {
+	margin: auto;
+	width: fit-content;
+}
+
+.gallery-frame {
+    background: #FFF;
+    z-index: 4;
+    border-radius: 24px;
+	padding: 20px;
+	padding-bottom: 30px;
+}
+
+.gallery-title {
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 790;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.gallery-subtitle {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #B0B0B0;
+    font-size: 0.8vw;
+    letter-spacing: 2px;
+}
+
+
+/*         СЛАЙДЕР         */
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0%;
+    margin-top: 0%;
+	border-radius: 1vw;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide {
+    width: 100%;
+    min-width: 100%;
+    cursor: pointer;
+    height: auto;
+}
+
+.slide img, .slide iframe {
+	width: 99%;
+    height: 95%;
+    border-radius: 5%;
+    margin-top: 2%;
+    margin-left: 0.5%;
+}
+
+.prev img {
+    position: relative;
+    height: 24px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: filter 0.3s ease;
+}
+
+.next img {
+    position: relative;
+    height: 24px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: filter 0.3s ease;
+}
+
+.prev, .next {
+	float: right;
+    border: none;
+    pointer-events: none;
+    background: none;
+	margin-left: 10px;
+}
+
+.prev img:hover, .next img:hover {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(7457%) hue-rotate(1deg) brightness(97%) contrast(114%);
+}
+
+/* Лайтбокс (Масштаб фотографий) */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img, .lightbox iframe {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 1vw;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.lightbox.show img, .lightbox.show iframe {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.lightbox.show iframe {
+    width: 720vw;
+    height: 405vw;
+    max-width: 1600px;
+    max-height: 900px;
+    border-radius: 1vw; 
+}
+
+.lightbox #lightboxContent {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Кнопки */
+
+.close {
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    top: 10%;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-left {
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    transform: rotate(-180deg);
+}
+
+.arrow-right {
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.lightbox iframe {
+    width: 1280px;
+    height: 720px;
+    border-radius: 10px;
+}
+
+.lightbox.show iframe {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.target {
+	height: 100%;
+}
+
+.target-frame {
+    background: #FFF;
+    z-index: 5;
+    border-radius: 24px;
+    box-sizing: border-box;
+	height: 100%;
+	padding: 20px;
+}
+
+.target-title {
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 790;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.target-subtitle {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #B0B0B0;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.target-text {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: black;
+	margin-top: 50px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+
+.contacts {
+	margin-top: 20px;
+}
+
+.contacts-frame {
+    background: #FFF;
+    z-index: 4;
+    border-radius: 24px;
+	padding: 20px;
+}
+
+.contacts-title {
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 790;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.contacts-subtitle {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #B0B0B0;
+    font-size: 0.8vw;
+    letter-spacing: 2px;
+}
+
+.contacts-owner-icon img {
+    height: 76px;
+    border-radius: 0.8vw;
+	vertical-align: middle;
+    margin-top: 3%;
+}
+
+.contacts-owner-text {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: black;
+    font-size: 26px;
+    font-weight: 550;
+    letter-spacing: 1.1px;
+	vertical-align: middle;
+	display:inline-block;
+    margin-top: 3%;
+    margin-left: 1.5%;
+}
+
+.title {
+	position: relative;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #FFF;
+    font-weight: 1000;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+	margin-top: 5%;
+    margin-left: 16%;
+}
+
+.title-blur {
+	position: relative;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: white;
+    font-weight: 1000;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    filter: blur(40px) opacity(0.4);
+	margin-top: -15.4%;
+}
+
+.subtitle {
+	position: relative;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #B0B0B0;
+    font-size: 24px;
+    margin-top: 0.5%;
+    margin-left: 16.1%;
+    letter-spacing: 1px;
+}
+
+.arrow img {
+    width: 3.1vw;
+    margin-left: 16.1%;
+    margin-top: 2.7%;
+}
+
+.arrow-text {
+    font-family: 'Work Sans', sans-serif;
+    color: #FFF;
+    font-size: 2.2vw;
+    margin-top: -3%;
+    margin-left: 21%;
+}
+
+.arrow-text a {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-weight: normal;
+    will-change: transform;
+    color: inherit;
+    text-decoration: none;
+}
+
+.arrow-text a:hover {
+    transform: scale(1.1);
+    color: red;
+}
+
+.arrow {
+    transition: fill 0.3s ease;
+    fill: #000;
+}
+
+.arrow-text a:hover + .arrow {
+    fill: red;
+}
+
+.inline {
+	float: left;
+}
+
+.clearBoth { clear:both; }
+
+.students-back-gradient {
+    width: 8vw;
+    height: 8vw;
+    flex-shrink: 0;
+    border-radius: 15%;
+    background: linear-gradient(136deg, #7F7F7F -77.13%, #000 100%);
+    margin-left: 16.1%;
+}
+
+.students-front-gradient {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    flex-shrink: 0;
+    border-radius: 15%;
+    background: linear-gradient(214deg, #D11818 34.69%, #ED6060 110.32%);
+    margin-top: -1%;
+    margin-left: 1%;
+}
+
+.students-text-amount {
+    font-family: 'Work Sans', sans-serif;
+    color: #FFF;
+    font-size: 2.5vw;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    letter-spacing: 1px;
+    transform: scaleX(1.1);
+    margin-top: 30%;
+    margin-left: 17%;
+}
+
+.students-text {
+    position: absolute;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #B0B0B0;
+    margin-top: 8%;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-left: 2%;
+}
+
+.year-back-gradient {
+    width: 8vw;
+    height: 8vw;
+    flex-shrink: 0;
+    border-radius: 15%;
+    background: linear-gradient(136deg, #7F7F7F -77.13%, #000 100%);
+    margin-left: 8%;
+}
+
+.year-front-gradient {
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    flex-shrink: 0;
+    border-radius: 15%;
+    background: linear-gradient(214deg, #D11818 34.69%, #ED6060 110.32%);
+    margin-top: -1%;
+    margin-left: 1%;
+}
+
+.year-text {
+    font-family: 'Work Sans', sans-serif;
+    color: #FFF;
+    font-size: 2.5vw;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 30%;
+    margin-left: 10%;
+}
+
+.year-create-text {
+    position: absolute;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #B0B0B0;
+    margin-top: 8%;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-left: 2%;
+}
+
+/*    О НАС     */
+
+.o-nas {
+    position: relative;
+    font-family: 'Work Sans', sans-serif;
+    color: #FFF;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 40px;
+	margin-left: 12%;
+    z-index: 5;
+}
+
+.circle {
+    position: absolute;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 1.2%;
+    margin-top: 0%;
+}
+
+.o-nas-big {
+    font-family: 'Work Sans', sans-serif;
+    color: #FFF;
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    letter-spacing: 1px;
+	text-align: right;
+    margin-right: 15%;
+    opacity: 0.1;
+    position: relative;
+    z-index: 5;
+}
+
+.lines {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.lines-one {
+    position: absolute;
+    width: 0.01vw;
+    height: 8.35vw;
+    left: 20%;
+    background: #7F7F7F;
+    z-index: 4;
+    margin-top: 125%;
+}
+
+.lines-two {
+    position: absolute;
+    width: 0.01vw;
+    height: 8.35vw;
+    left: 63.8%;
+    background: #7F7F7F;
+    z-index: 4;
+    margin-top: 125%;
+}
+
+.lines-date-title {
+    font-family: 'Work Sans', sans-serif;
+	text-align: center;
+    color: white;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 790;
+    line-height: normal;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.lines-date-subtitle {
+    font-family: 'Noto Sans Display', sans-serif;
+	text-align: center;
+    color: #cc5f5f;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.lines-students-title {
+    font-family: 'Work Sans', sans-serif;
+	text-align: center;
+    color: white;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 790;
+    line-height: normal;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.lines-students-subtitle {
+    font-family: 'Noto Sans Display', sans-serif;
+	text-align: center;
+    color: #cc5f5f;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.about-karaganda-text-one {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    z-index: 10;
+}
+
+.blur-2 {
+    position: absolute;
+    top: 160.5%;
+    left: -27%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: #eb1010;
+    filter: blur(250px);
+    z-index: -4;
+}
+
+.blur-3 {
+    position: absolute;
+    top: 38.5%;
+    left: 67%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: #eb1010;
+    filter: blur(250px);
+    z-index: -2;
+}
+
+.blur-4 {
+    position: absolute;
+    top: 317%;
+    left: 85%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: #eb1010;
+    filter: blur(250px);
+    z-index: -2;
+}
+
+.header {
+    font-family: 'Noto Sans Display', sans-serif;
+    position: relative;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.header-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1.2vw;
+    height: 70px;
+    padding: 5px 10px;
+    max-width: 60%;
+    margin: 10px auto 0px auto;
+    position: relative;
+    z-index: 5;
+}
+
+.header-logo {
+    margin-right: 1vw;
+}
+
+.header-logo img {
+    position: relative;
+    margin-left: 5%;
+    width: 60px;
+	max-width: 80%;
+    height: auto;
+    top: 2px;
+    border-radius: 100px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2vw;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: red;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: red;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav a.active {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav a:last-child {
+    margin-left: auto;
+}
+
+.nav img.whatsapp {
+    width: 50px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-lines {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-line-one, .footer-line-two, .footer-line-three {
+    width: 1px;
+    height: 100px;
+    background-color: white;
+}
+
+
+.footer-contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    left: -20%;
+}
+
+/* Линия между номером и IP-адресом */
+.footer-line {
+    width: 1px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    left: 30%;
+    top: 12.5%;
+    transform: translateX(-50%);
+}
+
+/* Стили текста контактной информации */
+.footer-number, .footer-address {
+    font-size: 1rem;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+/* Кнопки навигации */
+.footer-buttons {
+    font-family: 'Noto Sans Display', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-button {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    background: #444;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.footer-number {
+    position: relative;
+    left: 70%;
+}
+
+.footer-number-icon {
+    position: relative;
+    left: 70%;
+}
+
+.footer-button:hover {
+    background: #555;
+}
+
+.footer-address {
+    position: relative;
+    left: 30%;
+}
+
+.footer-ip-icon {
+    position: relative;
+    left: 30%;
+}
+
+.footer-copyright {
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+@media (max-width: 960px) {
+    .container {
+        grid-template-columns: 97%; /* Одна колонка */
+		max-width: 100%;
+    }
+	.o-nas-big {
+		display: none;
+	}
+	.soldier {
+		display: none;
+	}
+	
+	.title a {		
+		font-size: 5.5vw;
+	}
+
+    .title-blur a {
+        display: none;
+    }
+	
+	.header {
+		width: 100%;
+	}
+	
+	.header-line {
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.title {
+		margin: 2% auto 0 auto;
+		font-size: 28px;
+		width: 60%;
+        margin-left: 25%;
+	}
+	
+	.subtitle {
+		margin: 0 auto 0 auto;
+		font-size: 16px;
+		width: 60%;
+        margin-top: 10%;
+        margin-left: 25%;
+	}
+	
+	.arrow img {
+		margin-top: 4%;
+        margin-left: 37%;
+		width: 3.5vw;
+	}
+	
+	.arrow-text {
+		margin-top: -4.5%;
+        margin-left: 42%;
+		font-size: 4vw;
+	}
+	
+	.nav a {
+		font-size: 2.5vw;
+	}
+		
+	.header-logo img {
+		width: 40px;
+	}
+	
+	.nav img.whatsapp {
+		width: 40px;
+	}
+	
+	.year-back-gradient {
+		margin-left: 15%;
+	}
+	
+    .year-create-text {
+        margin-left: -6%;
+    }
+
+    .students-back-gradient {
+        margin-left: 32%;
+    }
+
+    .students-text {
+        margin-left: -1.5%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .students-text {
+        margin-left: -3%;
+    }
+
+    .year-create-text {
+        margin-left: -8%;
+    }
+
+    .students-text-amount {
+        margin-left: 12%;
+    }
+
+}
+
+@media (max-width: 590px) {
+
+    .students-text {
+        font-size: 2.5vw;
+    }
+
+    .year-create-text {
+        font-size: 2.5vw;
+    }
+
+    .o-nas {
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .year-back-gradient {
+		margin-left: 25%;
+	}
+
+    .students-back-gradient {
+        margin-left: 27%;
+    }
+
+    .title {
+		margin: 2% auto 0 auto;
+		font-size: 20px;
+		width: 60%;
+        margin-left: 25%;
+	}
+
+    .students-text-amount {
+        margin-left: 8%;
+    }
+
+    .year-text {
+        margin-left: 8%;
+    }
+
+}
+
+@media (max-width: 280px) {
+
+    .title {
+		margin: 2% auto 0 auto;
+		font-size: 15px;
+		width: 60%;
+        margin-left: 25%;
+	}
+}
+
+@media (max-width: 500px) {
+
+    .arrow img {
+		margin-top: 4%;
+        margin-left: 27%;
+		width: 10vw;
+	}
+	
+	.arrow-text {
+		margin-top: -9%;
+        margin-left: 45%;
+		font-size: 6vw;
+        transform: scaleX(1.2);
+	}
+
+    .title {
+		margin: 2% auto 0 auto;
+		font-size: 15px;
+		width: 60%;
+        transform: scaleX(1.2);
+        text-align: center;
+	}
+
+    .subtitle {
+        transform: scaleX(1.2);
+        margin-left: 20%;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .target-title {
+        text-align: center;
+    }
+
+    .gallery-title {
+        text-align: center;
+    }
+
+    .contacts-title {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .contacts-owner-text {
+        text-align: left;
+    }
+
+    .about-karaganda-text-one {
+        text-align: center;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
+}
