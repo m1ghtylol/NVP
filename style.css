@@ -38,6 +38,7 @@ body {
     background: black;
     filter: blur(36.5px);
     z-index: -1;
+    
 }
 
 .item {
@@ -286,7 +287,7 @@ body {
     font-family: 'Noto Sans Display', sans-serif;
     color: black;
 	margin-top: 50px;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 500;
     letter-spacing: 1.5px;
 }
@@ -358,8 +359,8 @@ body {
     font-size: 3.5vw;
     text-transform: uppercase;
     letter-spacing: 2px;
-    filter: blur(40px) opacity(0.4);
-	margin-top: -15.4%;
+    filter: blur(40px) opacity(0.3);
+	margin-top: -17.3%;
 }
 
 .subtitle {
@@ -780,13 +781,6 @@ body {
     position: relative;
 }
 
-.footer-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    left: -20%;
-}
 
 /* Линия между номером и IP-адресом */
 .footer-line {
@@ -839,15 +833,30 @@ body {
     background: #555;
 }
 
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    left: -20%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+}
+
 .footer-address {
     position: relative;
     left: 30%;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-ip-icon {
     position: relative;
     left: 30%;
+    transition: transform 0.3s ease;
+    
 }
+
+
 
 .footer-copyright {
     font-family: 'Noto Sans Display', sans-serif;
@@ -1061,4 +1070,59 @@ body {
     .footer-copyright {
         text-align: center;
     }
+}
+
+
+/* Модальное окно (фон) */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Содержимое модального окна */
+  .modal-content {
+    position: relative; /* Базовое позиционирование */
+    display: inline-block; /* Ограничиваем по размеру содержимого */
+  }
+  
+  /* Картинка в модальном окне */
+  .modal-content img {
+    width: 70%;
+    max-width: 90%; /* Адаптивная ширина */
+    height: auto; /* Сохраняем пропорции */
+    display: block;
+    margin-left: 15%;
+  }
+  
+  /* Кнопка закрытия */
+  .close {
+    position: absolute; /* Привязана к контейнеру (modal-content) */
+    top: 10px;
+    right: 50px;
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон кнопки */
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+iframe {
+    width: 72vw;
+    height: 60vh;
+    border-radius: 1.5vw;
 }
