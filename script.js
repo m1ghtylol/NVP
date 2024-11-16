@@ -194,3 +194,26 @@ document.addEventListener("keydown", (event) => {
 });
 
 
+
+
+// Получаем элементы
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('openModal');
+const closeModalBtn = document.querySelector('.close');
+
+// Открытие модального окна
+openModalBtn.addEventListener('click', () => {
+  modal.style.display = 'flex';
+});
+
+// Закрытие модального окна
+closeModalBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Закрытие модального окна при клике на затемнённый фон
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
