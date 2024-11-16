@@ -120,7 +120,15 @@
                     <div class="target-subtitle">
                         <a>«БYPKIT»</a>
                         <div class="target-text">
-                            <a>1. Военно - патриотическое<br>воспитание молодежи<br>2. Изучение истории Казахстана<br>и ее Вооруженных Сил<br>3. Подготовка молодежи<br>психологически и физически<br>к службе в Вооруженных Силах РК<br><br>4. Подготовка молодежи<br>к сознательному выбору военной<br>специальности и поступлению<br>в военные учебные заведения.<br>5. Формирование патриотизма<br>и гражданственности.<br>6. Развитие командных навыков<br>и лидерских качеств.</a>
+                            <a>1. Военно - патриотическое воспитание молодежи<br>2. Изучение истории Казахстана и ее Вооруженных Сил<br>3. Подготовка молодежи психологически и физически к службе в Вооруженных Силах РК<br><br>4. Подготовка молодежи к сознательному выбору военной специальности и поступлению в военные учебные заведения.<br>5. Формирование патриотизма и гражданственности.<br>6. Развитие командных навыков и лидерских качеств.</a>
+                        </div>
+                        <button id="openModal">Открыть модальное окно</button>
+
+                        <div id="modal" class="modal">
+                        <div class="modal-content">
+                                <img src="images/modal_img.jpg" class="modal-img">
+                                <span class="close">&times;</span>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -588,7 +596,30 @@
 				</div>
 			</div>
 		</div>
-		
+
+
+        <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://m1ghtylol.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 	</div>
 	
 	<!-- Фотки в масштабе -->
@@ -598,8 +629,6 @@
 		<button class="arrow-left">➜</button>
 		<button class="arrow-right">➜</button>
 	</div>
-
-	<div id="commento"></div>
 	
 	<div class="footer">
         <!-- Контактная информация -->
@@ -617,7 +646,7 @@
                 <span class="footer-address">Республика Казахстан, г. Караганда, пр. Бухар - Жырау 9</span>
             </div>
         </div>
-	
+    
         <!-- Кнопки навигации -->
         <div class="footer-buttons">
             <a href="#main-footer" class="footer-button">ГЛАВНАЯ СТРАНИЦА</a>
@@ -625,15 +654,17 @@
             <a href="#about-karaganda" class="footer-button">О КАРАГАНДЕ</a>
         </div>
 
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d765.4030087173128!2d73.08239083796363!3d49.814293683737816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424346d992055555%3A0x3941cec4eaa33987!2z0JrQktCf0KLQmiAtIDIg0JrQvtGA0L_Rg9GB!5e0!3m2!1sru!2skz!4v1731763439247!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
         <!-- Копирайт -->
         <div class="footer-copyright">
             <a>Copyright© 2024 «БYPKIT». Все права защищены.</a>
         </div>
-
     </div>
 	
 <script src="script.js"></script>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<script id="dsq-count-scr" src="//m1ghtylol.disqus.com/count.js" async></script>
 </body>
 
 </html>
