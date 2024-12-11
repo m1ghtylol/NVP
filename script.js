@@ -1,81 +1,70 @@
-var img = document.getElementsByTagName('img');
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const sliderWrapper = document.querySelector(".slider-wrapper");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
 
-for(var i in img)
-{
-    img[i].oncontextmenu = function()
-    {
-        return false;
-    }
+function updateSliderPosition() {
+    sliderWrapper.style.transform = `translateX(-${currentIndex * 33.33}%)`;
 }
 
-
-document.querySelector('.nav a[href="#servers"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector('#frame-lostsouls');
-    const topPosition = target.getBoundingClientRect().top + window.pageYOffset - 100;
-
-    window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth'
-    });
+document.querySelector(".next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % (slides.length - 2);
+    updateSliderPosition();
 });
 
-
-document.querySelector('.nav a[href="#play"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector('#launcher');
-    const topPosition = target.getBoundingClientRect().top + window.pageYOffset - 70;
-
-    window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth'
-    });
+document.querySelector(".prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + slides.length - 2) % (slides.length - 2);
+    updateSliderPosition();
 });
 
-
-document.querySelector('.play-main').addEventListener('click', function(e) {
-    e.preventDefault(); // Останавливаем стандартное поведение ссылки
-    const target = document.querySelector('#launcher'); // Целевой элемент
-    const topPosition = target.getBoundingClientRect().top + window.pageYOffset - 100; // Позиция целевого элемента
-
-    window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth' // Плавная прокрутка
-    });
+slides.forEach((slide, index) => {
+    slide.addEventListener("click", () => openLightbox(index));
 });
 
+function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = slides[currentIndex].querySelector("img").src;
 
-document.querySelector('.more').addEventListener('click', function(e) {
-    e.preventDefault(); // Останавливаем стандартное поведение ссылки
-    const target = document.querySelector('#frame-lostsouls'); // Целевой элемент
-    const topPosition = target.getBoundingClientRect().top + window.pageYOffset - 130; // Позиция целевого элемента
+    lightbox.classList.add("show");
+    lightboxImg.classList.add("scale-in");
+}
 
-    window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth' // Плавная прокрутка
-    });
+function closeLightbox() {
+    lightboxImg.classList.remove("scale-in");
+    lightboxImg.classList.add("scale-out");
+
+    setTimeout(() => {
+        lightbox.classList.remove("show");
+        lightboxImg.classList.remove("scale-out");
+    }, 300);
+}
+
+document.querySelector(".close").addEventListener("click", closeLightbox);
+
+function changeLightboxImage(index) {
+    lightboxImg.classList.remove("scale-in");
+    lightboxImg.classList.add("scale-out");
+
+    setTimeout(() => {
+        currentIndex = index;
+        lightboxImg.src = slides[currentIndex].querySelector("img").src;
+
+        lightboxImg.classList.remove("scale-out");
+        lightboxImg.classList.add("scale-in");
+    }, 300);
+}
+
+document.querySelector(".arrow-left").addEventListener("click", () => {
+    const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+    changeLightboxImage(newIndex);
 });
 
-
-
-document.querySelector('.nav-footer a[href="#servers-footer"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector('#frame-lostsouls');
-    const topPosition = target.getBoundingClientRect().top + window.pageYOffset - 130;
-
-    window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth'
-    });
+document.querySelector(".arrow-right").addEventListener("click", () => {
+    const newIndex = (currentIndex + 1) % slides.length;
+    changeLightboxImage(newIndex);
 });
 
-document.querySelector('.nav-footer a[href="#play-footer"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector('#launcher');
-    const topPosition = target.getBoundingClientRect().top + window.pageYOffset - 100;
-
-    window.scrollTo({
-        top: topPosition,
-        behavior: 'smooth'
-    });
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
 });
