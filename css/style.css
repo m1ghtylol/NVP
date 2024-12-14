@@ -391,6 +391,7 @@ body {
     }
     .main-subtitle {
         top: -80px;
+        font-size: 3vw;
     }
     .left-arrow, .right-arrow {
         top: -190px;
