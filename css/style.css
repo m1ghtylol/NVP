@@ -247,7 +247,7 @@ body {
 
 .cards {
     position: relative;
-    padding: 400px 0;
+    padding: 250px 0;
     z-index: 3;
 }
 
@@ -290,31 +290,31 @@ body {
 
 @media (max-width: 1800px) {
     .cards {
-        padding: 330px 0;
+        padding: 200px 0;
     }
 }
 
 @media (max-width: 1650px) {
     .cards {
-        padding: 320px 0;
+        padding: 150px 0;
     }
 }
 
 @media (max-width: 1500px) {
     .cards {
-        padding: 300px 0;
+        padding: 120px 0;
     }
 }
 
 @media (max-width: 1400px) {
     .cards {
-        padding: 250px 0;
+        padding: 100px 0;
     }
 }
 
 @media (max-width: 1250px) {
     .cards {
-        padding: 220px 0;
+        padding: 80px 0;
     }
     .left-arrow, .right-arrow {
         
@@ -323,13 +323,13 @@ body {
 
 @media (max-width: 1135px) {
     .cards {
-        padding: 190px 0;
+        padding: 70px 0;
     }
 }
 
 @media (max-width: 1050px) {
     .cards {
-        padding: 150px 0;
+        padding: 60px 0;
     }
     .main-title {
         top: -30px;
@@ -348,7 +348,7 @@ body {
 
 @media (max-width: 850px) {
     .cards {
-        padding: 120px 0;
+        padding: 5px 0;
     }
     .left-arrow, .right-arrow {
         
@@ -361,7 +361,7 @@ body {
 
 @media (max-width: 750px) {
     .cards {
-        padding: 90px 0;
+        top: -50px;
     }
     .main-title {
         top: -50px;
@@ -378,13 +378,13 @@ body {
 
 @media (max-width: 650px) {
     .cards {
-        padding: 70px 0;
+        top: -50px;
     }
 }
 
 @media (max-width: 550px) {
     .cards {
-        padding: 25px 0;
+        top: -100px;
     }
     .main-title {
         top: -70px;
@@ -400,7 +400,7 @@ body {
 
 @media (max-width: 450px) {
     .cards {
-        padding: 0px 0;
+        top: -70px;
     }
     .main-title {
         font-size: 4.5vw;
