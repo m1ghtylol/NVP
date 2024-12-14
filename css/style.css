@@ -434,3 +434,39 @@ body {
         top: -145px;
     }
 }
+
+
+
+@media (max-width: 850px) {
+    .dropbtn {
+        border-radius: 15px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .dropbtn {
+        border-radius: 15px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .dropbtn {
+        border-radius: 15px;
+        font-size: 12px;
+        padding: 12px 11px;
+    }
+}
+
+@media (max-width: 550px) {
+    .text-logo {
+        width: 150px;
+    }
+}
+
+@media (max-width: 450px) {
+    .logo-text {
+        display: none;
+    }
+}
